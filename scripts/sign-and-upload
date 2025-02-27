@@ -6,7 +6,7 @@ dnf install -y epel-release wget
 dnf install -y python3 python3-pip python3-devel \
   rpm-sign expect git
 
-dnf install -y ca-certificates createrepo_c
+dnf install -y ca-certificates createrepo_c pinentry
 
 pip install --upgrade boto3 pexpect
 
