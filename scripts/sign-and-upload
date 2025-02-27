@@ -11,7 +11,7 @@ dnf install -y ca-certificates createrepo_c
 pip install --upgrade boto3 pexpect
 
 pushd $(dirname $0)/..
-. ../policy/centos9/scripts/version
+. ./scripts/version
 popd
 
 cat <<\EOF >~/.rpmmacros
