@@ -16,11 +16,11 @@ jobs:
       fail-fast: false
       matrix:
         os:
-          - "centos7"
-          - "centos8"
+          #       - "centos7"
+          #- "centos8"
           - "centos9"
-          - "microos"
-          - "slemicro"
+          #- "microos"
+          #- "slemicro"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
