@@ -42,8 +42,7 @@ case "$RPM_CHANNEL" in
     echo "TESTING_PRIVATE_KEY not defined, failing rpm sign"
     exit 1
   fi
-  echo "$TESTING_PRIVATE_KEY" >key.gpg
-  gpg --batch --passphrase "$PRIVATE_KEY_PASS_PHRASE" --import key.gpg
+  gpg --import - <<<"$TESTING_PRIVATE_KEY"
 
   if [ -z "$TESTING_AWS_S3_BUCKET" ]; then
     echo "TESTING_AWS_S3_BUCKET not defined, failing rpm upload"
