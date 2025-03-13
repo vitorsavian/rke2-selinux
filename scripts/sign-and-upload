@@ -89,7 +89,7 @@ case "$RPM_CHANNEL" in
   ;;
 esac
 
-wget https://raw.githubusercontent.com/vitorsavian/ecm-distro-tools/fix/bin/rpm_tooling
+wget https://raw.githubusercontent.com/vitorsavian/ecm-distro-tools/fix-stuff/bin/rpm_tooling
 chmod +x rpm_tooling
 mv ./rpm_tooling /usr/bin
 
