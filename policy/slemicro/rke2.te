@@ -35,3 +35,12 @@ allow iscsid_t self:capability dac_override;
 ###################
 type rke2_tls_t;
 files_type(rke2_tls_t);
+
+###############################
+# type rke2_service_db_file_t #
+###############################
+# etcd data and snapshots under /var/lib/rancher/rke2/server/db
+type rke2_service_db_file_t;
+files_type(rke2_service_db_file_t);
+# etcd mmaps its bbolt database (db/etcd/member/snap/db)
+allow rke2_service_db_t rke2_service_db_file_t:file { map };

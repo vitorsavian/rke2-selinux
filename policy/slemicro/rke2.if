@@ -14,6 +14,7 @@ interface(`rke2_filetrans_named_content',`
         type var_lib_t;
         type var_log_t;
         type rke2_tls_t; 
+        type rke2_service_db_file_t;
     ')
 
     #container_filetrans_named_content($1)
@@ -26,6 +27,7 @@ interface(`rke2_filetrans_named_content',`
     filetrans_pattern($1, var_log_t, container_log_t, dir, "containers")
     filetrans_pattern($1, container_var_lib_t, container_log_t, dir, "logs")
     filetrans_pattern($1, container_var_lib_t, container_log_t, file, "containerd.log")
+    filetrans_pattern($1, container_var_lib_t, rke2_service_db_file_t, dir, "db")
     filetrans_pattern($1, container_var_lib_t, rke2_tls_t, dir, "tls")
 ')
 
@@ -57,4 +59,5 @@ template(`rke2_service_domain_template',`
 
     admin_pattern($1_t, container_log_t)
     admin_pattern($1_t, rke2_tls_t)
+    admin_pattern($1_t, rke2_service_db_file_t)
 ')
